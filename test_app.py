@@ -4,7 +4,7 @@ def test_home():
     client = app.test_client()
     res = client.get("/")
     assert res.status_code == 200
-    assert res.json["message"] == "Python CI/CD Demo API is running!"
+    assert res.json["message"] == "ToDo List App is running"
 
 def test_greet():
     client = app.test_client()
