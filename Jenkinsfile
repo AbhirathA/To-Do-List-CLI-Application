@@ -9,24 +9,15 @@ pipeline {
 
     stages {
 
-        //stage('Checkout') {
-          //  steps {
-            //    checkout([$class: 'GitSCM',
-              //    branches: [[name: '*/main']],
-                //  userRemoteConfigs: [[
-                  //  url: 'https://github.com/AbhirathA/To-Do-List-CLI-Application.git',
-                    //credentialsId: 'github-creds'
-          //        ]]
-            //    ])
-      //      }
-        //}
-
-        stage('Install python3-venv') {
+        stage('Checkout') {
             steps {
-                sh '''
-                    sudo apt-get update
-                    sudo apt-get install -y python3-venv python3.12-venv || true
-                '''
+                checkout([$class: 'GitSCM',
+                  branches: [[name: '*/main']],
+                  userRemoteConfigs: [[
+                    url: 'https://github.com/AbhirathA/To-Do-List-CLI-Application.git',
+                    credentialsId: 'github-creds'
+                  ]]
+                ])
             }
         }
 
