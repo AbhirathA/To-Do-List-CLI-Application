@@ -21,6 +21,16 @@ pipeline {
             }
         }
 
+        stage('Install python3-venv') {
+            steps {
+                sh '''
+                    sudo apt-get update
+                    sudo apt-get install -y python3-venv python3.12-venv || true
+                '''
+            }
+        }
+
+
         stage('Create Virtual Environment') {
             steps {
                 sh '$PYTHON -m venv $VENV'
