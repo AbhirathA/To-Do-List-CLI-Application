@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.get("/")
 def home():
-    return jsonify({"message": "Python CI/CD Demo API is running!"})
+    return jsonify({"message": "ToDo List App is running"})
 
 @app.get("/hello/<name>")
 def greet(name):
