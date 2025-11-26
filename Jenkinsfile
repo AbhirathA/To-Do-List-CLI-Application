@@ -9,17 +9,17 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                checkout([$class: 'GitSCM',
-                  branches: [[name: '*/main']],
-                  userRemoteConfigs: [[
-                    url: 'https://github.com/AbhirathA/To-Do-List-CLI-Application.git',
-                    credentialsId: 'github-creds'
-                  ]]
-                ])
-            }
-        }
+        //stage('Checkout') {
+          //  steps {
+            //    checkout([$class: 'GitSCM',
+              //    branches: [[name: '*/main']],
+                //  userRemoteConfigs: [[
+                  //  url: 'https://github.com/AbhirathA/To-Do-List-CLI-Application.git',
+                    //credentialsId: 'github-creds'
+          //        ]]
+            //    ])
+      //      }
+        //}
 
         stage('Install python3-venv') {
             steps {
